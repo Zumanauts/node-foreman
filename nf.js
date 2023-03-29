@@ -50,6 +50,7 @@ var startForward = require('./lib/forward').startForward;
 process.once('SIGINT', function() {
   display.Warn('Interrupted by User');
   emitter.emit('killall', 'SIGINT');
+  process.exit(1); // Kill self too!
 });
 
 program
