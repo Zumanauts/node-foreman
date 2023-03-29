@@ -26,6 +26,7 @@ program.option('-p, --port     <PORT>' ,'start indexing ports at number PORT',0)
 var emitter = new events.EventEmitter();
 emitter.once('killall',function(signal){
   display.Done("Killing all processes with signal ", signal);
+  process.exit(1); // just exit already, i'm done with fixing all this in the right way - it does not work as intended, so just quit!
 });
 emitter.setMaxListeners(50);
 
